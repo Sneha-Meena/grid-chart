@@ -1,2 +1,0 @@
-# grid-chart
-Grid Chart
