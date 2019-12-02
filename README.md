@@ -1,4 +1,4 @@
-##Grid Chart
+##Grid Chart##
 
 The chart component is a pictorial representation for organizing and summarizing selected columns and rows of data from a grid component to obtain a desired report. 
 
