@@ -1,0 +1,52 @@
+<div class="ang-tbl" [ngStyle]="{ width: gridData.width }">
+  <div class="ang-tbl-chart">
+    <span
+      ><a (click)="generateChart()"
+        ><i class="fa fa-bar-chart" aria-hidden="true"></i></a
+    ></span>
+  </div>
+  <div class="ang-tbl-header">
+    <ng-container *ngFor="let column of columns; index as i">
+      <div
+        class="ang-tbl-header-cell"
+        id="ang-tbl-header-cell-{{ i }}"
+        [ngStyle]="{ width: column.width }"
+      >
+        <span>
+          <a (click)="sort(column)"
+            >{{ column.columnName }}
+            <i
+              class="fas fa-angle-down"
+              *ngIf="column.sortDirection === 'desc'"
+            ></i>
+            <i
+              class="fas fa-angle-up"
+              *ngIf="column.sortDirection === 'asc'"
+            ></i>
+          </a>
+        </span>
+      </div>
+    </ng-container>
+  </div>
+  <div class="ang-tbl-column-data">
+    <div
+      *ngFor="let columnData of gData; index as columnDatai"
+      class="ang-tbl-row-data"
+    >
+      <ng-container *ngFor="let column of columns; index as i">
+        <div
+          class="ang-tbl-row-cell"
+          id="ang-tbl-row-cell-{{ i }}"
+          [ngStyle]="{ width: column.width }"
+        >
+          <span>{{ columnData[column.field] }} </span>
+        </div>
+      </ng-container>
+    </div>
+    <div *ngIf="!gData" class="ang-tbl-row-data">
+      No data found
+    </div>
+  </div>
+</div>
+
+<ang-chart *ngIf="isShow" [data]="data" [isShow]="isShow" [column-config]="columns" (showEvent)="showChart($event)"></ang-chart>

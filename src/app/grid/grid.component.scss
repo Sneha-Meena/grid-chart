@@ -1,0 +1,44 @@
+.ang-tbl-header, .ang-tbl-chart, .ang-tbl-column-data .ang-tbl-row-data{
+  display: flex;
+  color: #656565;
+}
+.ang-tbl-header, .ang-tbl-chart, .ang-tbl-column-data .ang-tbl-row-data:nth-child(even){
+  background-color: #f6f6f6;
+}
+
+.fa-bar-chart-o:before, .fa-bar-chart:before {
+  content: "\f080";
+}
+.ang-tbl-chart{
+  border:  1px solid #afa7a7;
+  flex-direction: row-reverse;
+}
+
+.ang-tbl-header {
+  font-weight: 600;
+}
+
+.ang-tbl-header .fas{
+  font-size: 10px;
+}
+
+.ang-tbl-header-cell, .ang-tbl-row-data .ang-tbl-row-cell{
+  padding: 2px;
+}
+
+.ang-tbl-header-cell, .ang-tbl-row-cell {
+  border: 1px solid #afa7a7;
+  border-right: 0px;
+  border-bottom: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ang-tbl-row-data:nth-last-child(1) .ang-tbl-row-cell{
+  border-bottom: 1px solid #afa7a7;
+}
+
+.ang-tbl-header-cell:nth-last-child(1), .ang-tbl-row-cell:nth-last-child(1) {
+  border-right: 1px solid #afa7a7;
+}
